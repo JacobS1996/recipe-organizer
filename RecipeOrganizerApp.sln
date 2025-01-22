@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeOrganizer", "RecipeOr
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RecipeOrganizerDatabase", "RecipeOrganizerDatabase\RecipeOrganizerDatabase.sqlproj", "{7E07476F-B760-403F-90FB-5843DB4B4674}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeOrganizerLibrary", "RecipeOrganizerLibrary\RecipeOrganizerLibrary.csproj", "{570477F4-577A-4065-9AD1-71E63DF46266}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeOrganizerLibrary", "RecipeOrganizerLibrary\RecipeOrganizerLibrary.csproj", "{570477F4-577A-4065-9AD1-71E63DF46266}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

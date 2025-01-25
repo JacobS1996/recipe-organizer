@@ -8,6 +8,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using RecipeOrganizerLibrary;
+using RecipeOrganizerLibrary.Models;
 
 namespace RecipeOrganizer
 {
@@ -15,10 +19,18 @@ namespace RecipeOrganizer
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
+
+       
     {
+           
         public MainWindow()
         {
             InitializeComponent();
+
+        }
+        private void recipeCreationButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

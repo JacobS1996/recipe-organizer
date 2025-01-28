@@ -30,7 +30,9 @@ namespace RecipeOrganizer
         }
         private void recipeCreationButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Hide();
+            RecipeCreationWindow recipeCreationWindow = new RecipeCreationWindow();
+            recipeCreationWindow.ShowDialog();
         }
     }
 }

@@ -9,6 +9,6 @@ namespace RecipeOrganizerLibrary.Models
 
         public string? IngredientName { get; set; }
 
-        public string? IngredientQuantity { get; set; }
+        public string? Proportion { get; set; }
     }
 }

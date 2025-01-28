@@ -32,8 +32,8 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding Path=IngredientName, Mode=OneWay}"></TextBlock>
-                        <TextBlock Text="{Binding Path=Proportion, Mode=OneWay}"></TextBlock>
+                        <TextBlock Text="{Binding Path=IngredientName, Mode=OneWay}" FontSize="16" Foreground="White"></TextBlock>
+                        <TextBlock Text="{Binding Path=Proportion, Mode=OneWay}" FontSize="16" Foreground="White"></TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

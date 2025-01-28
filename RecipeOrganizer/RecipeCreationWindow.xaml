@@ -48,17 +48,17 @@
         <Label x:Name="ingredientNameLabel" Content="Ingredient Name:" Grid.Column="1" Grid.Row="4" Foreground="White" FontSize="16"/>
         <Label x:Name="ingredientProportions" Content="Ingredient Proportions:" Grid.Column="1" Grid.Row="6" Foreground="White" FontSize="16"></Label>
         
-        <TextBox x:Name="recipeNameTextBox" Grid.Column="2" Grid.Row="2" Background="#FF373737"/>
-        <TextBox x:Name="ingredientNameTextBox" Grid.Column="2" Grid.Row="4" Background="#FF373737"/>
-        <TextBox x:Name="ingredientProportionTextBox" Grid.Column="2" Grid.Row="6" Background="#FF373737"/>
+        <TextBox x:Name="recipeNameTextBox" Grid.Column="2" Grid.Row="2" Background="#FF373737" Foreground="White" FontSize="16"/>
+        <TextBox x:Name="ingredientNameTextBox" Grid.Column="2" Grid.Row="4" Background="#FF373737" Foreground="White" FontSize="16"/>
+        <TextBox x:Name="ingredientProportionTextBox" Grid.Column="2" Grid.Row="6" Background="#FF373737" Foreground="White" FontSize="16"/>
 
         <ListBox x:Name="pendingIngredientsListBox" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="7" Background="#FF373737">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding Path=IngredientName, Mode=OneWay}">
+                        <TextBlock Text="{Binding Path=IngredientName, Mode=OneWay}" Foreground="White" FontSize="16">
                         </TextBlock>
-                        <TextBlock Text="{Binding Path=Proportion, Mode=OneWay}">
+                        <TextBlock Text="{Binding Path=Proportion, Mode=OneWay}" Foreground="White" FontSize="16">
                         </TextBlock>
                     </StackPanel>
                 </DataTemplate>

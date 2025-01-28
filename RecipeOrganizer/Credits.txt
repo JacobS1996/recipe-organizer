@@ -1,0 +1,35 @@
+﻿﻿Software Package Attribution
+----------------------------
+
+This project makes use of software packages which are under their own separate license agreements and copyright information. In keeping with the terms of
+these license agreements, the packages are listed below along with their respective copyright information, license agreements, and repository links:
+
+
+
+Dapper 2.1.35 Copyright (c) Stack Exchange, Inc.
+
+Licensed under Apache, Version 2.0 which can be found at https://www.apache.org/licenses/LICENSE-2.0
+
+Link to NuGet Package: https://www.nuget.org/packages/Dapper/2.1.35
+
+Link to the Dapper repository on Github: https://github.com/DapperLib/Dapper
+
+-----------------------------------------------------------------------------------------------------
+
+System.Data.SqlClient (4.9.0) Copyright (c) .Net Foundation and Contributors. All Rights Reserved
+
+Licensed under the MIT License which can be found at https://github.com/dotnet/maintenance-packages/blob/main/LICENSE
+
+Link to NuGet Package: https://www.nuget.org/packages/System.Data.SqlClient/4.9.0
+
+Link to SqlClient repository on GitHub: https://github.com/dotnet/maintenance-packages
+
+-----------------------------------------------------------------------------------------------------
+
+System.Configuration.ConfigurationManager (9.0.1) Copyright (c) .Net Foundation and Contributors. All Rights Reserved.
+
+Licensed under the MIT License which can be found at https://github.com/dotnet/runtime/blob/main/LICENSE.TXT
+
+Link to NuGet Package: https://www.nuget.org/packages/System.Configuration.ConfigurationManager/9.0.1
+
+Link to GitHub repository: https://github.com/dotnet/runtime

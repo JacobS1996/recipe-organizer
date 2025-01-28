@@ -56,8 +56,13 @@ namespace RecipeOrganizer
 
         private void displayIngredientsButton_Click(object sender, RoutedEventArgs e)
         {
-            string recipeName = recipeListItems.SelectedItem.ToString();
-            recipeIngredients.ItemsSource = dataAccess.GetIngredientListByRecipeName(recipeName, DatabaseName);
+            if (recipeListItems.SelectedItem != null)
+            {
+                 string recipeName = recipeListItems.SelectedItem.ToString();
+                recipeIngredients.ItemsSource = dataAccess.GetIngredientListByRecipeName(recipeName, DatabaseName);
+
+
+            }
         }
 
       

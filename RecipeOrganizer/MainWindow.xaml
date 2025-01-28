@@ -19,6 +19,7 @@
             <RowDefinition Height="10" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="10" />
         </Grid.RowDefinitions>
 
@@ -34,11 +35,14 @@
         <ListBox x:Name="recipeIngredients" Grid.Row="2" Grid.Column="2" Background="#FF373737" Margin="20,20,20,20" BorderBrush="#FF373737">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                        <TextBlock Text="{Binding Path=IngredientsList}"></TextBlock>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=IngredientName, Mode=OneWay}"></TextBlock>
+                        <TextBlock Text="{Binding Path=Proportion, Mode=OneWay}"></TextBlock>
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <Button x:Name="recipeCreationButton" Grid.Row="1" Grid.Column="2" Content="Create New Recipe" Background="#FFB7B7BA" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,10,10,10" Padding="10,10,10,10" Click="recipeCreationButton_Click"/>
-
+        <Button x:Name="displayIngredientsButton" Content="Display Ingredients" Grid.Row="3" Grid.Column="2" Background="#FFB7B7BA" Padding="1,1,1,1" HorizontalAlignment="Center" Margin="10,10,10,10" Click="displayIngredientsButton_Click"/>
     </Grid>
 </Window>

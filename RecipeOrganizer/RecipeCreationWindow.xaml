@@ -40,8 +40,8 @@
 
         </Grid.RowDefinitions>
 
-        <Button x:Name="submitRecipeButton" Content="Submit" Grid.Column="5" Grid.Row="9" Padding="1,15,1,15" MaxWidth="175" Background="#FFB7B7BA" />
-        <Button x:Name="addIngredientsButton" Content="Add" Grid.Column="2" Grid.Row="9" Padding="1,15,1,15" MaxWidth="175" Background="#FFB7B7BA"/>
+        <Button x:Name="submitRecipeButton" Content="Submit Recipe" Grid.Column="5" Grid.Row="9" Padding="1,15,1,15" MaxWidth="175" Background="#FFB7B7BA" Click="submitRecipeButton_Click" />
+        <Button x:Name="addIngredientsButton" Content="Add Ingredient" Grid.Column="2" Grid.Row="9" Padding="1,15,1,15" MaxWidth="175" Background="#FFB7B7BA" Click="addIngredientsButton_Click"/>
        
         <Label x:Name="pageTitle" Content="Recipe Creation Page" Grid.Column="1" Grid.Row="1" Foreground="White" FontSize="20" FontWeight="Bold" Grid.ColumnSpan="2"></Label>
         <Label x:Name="recipeNameLabel" Content="Recipe Name:" Grid.Column="1" Grid.Row="2" Foreground="White" FontSize="16"/>
@@ -52,7 +52,18 @@
         <TextBox x:Name="ingredientNameTextBox" Grid.Column="2" Grid.Row="4" Background="#FF373737"/>
         <TextBox x:Name="ingredientProportionTextBox" Grid.Column="2" Grid.Row="6" Background="#FF373737"/>
 
-        <ListBox x:Name="pendingIngredientsListBox" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="7" Background="#FF373737"></ListBox>
+        <ListBox x:Name="pendingIngredientsListBox" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="7" Background="#FF373737">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=IngredientName, Mode=OneWay}">
+                        </TextBlock>
+                        <TextBlock Text="{Binding Path=Proportion, Mode=OneWay}">
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
 
     </Grid>

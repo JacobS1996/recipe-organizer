@@ -37,13 +37,13 @@ namespace RecipeOrganizer
              IngredientModel ingredient = new IngredientModel();
             if(string.IsNullOrEmpty(ingredientNameTextBox.Text) || string.IsNullOrEmpty(ingredientProportionTextBox.Text))
             {
-                ingredient.IngredientName = ingredientNameTextBox.Text;
-                ingredient.Proportion = ingredientProportionTextBox.Text;
-                ingredients.Add(ingredient);
+                MessageBox.Show("Ingredient name or proportion fields cannot be blank.", "user input error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
-                MessageBox.Show("Ingredient name or proportion fields cannot be blank.", "user input error", MessageBoxButton.OK, MessageBoxImage.Error);
+                ingredient.IngredientName = ingredientNameTextBox.Text;
+                ingredient.Proportion = ingredientProportionTextBox.Text;
+                ingredients.Add(ingredient);
             }
             
 
@@ -51,23 +51,24 @@ namespace RecipeOrganizer
 
         private void submitRecipeButton_Click(object sender, RoutedEventArgs e)
         {
-            /* This method references the DataAccess class which contains methods which utilize third-party software packages Dapper, System.Data.SqlClient, and System.Config.ConfigurationManager
+            /* This method references the DataAccess class which contains methods which utilize third-party software packages Dapper, Microsoft.Data.SqlClient, and System.Config.ConfigurationManager
          Please see the Credits.txt file for the copyright information, licensing agreements, and links in compliance with these packages' licensing agreements. */
 
             DataInteraction dataInteraction = new DataInteraction();
-            bool recipeIsNotValid = dataInteraction.VerifyRecipeNameExists(recipeNameTextBox.Text, databaseName);
+            bool recipeIsNotValid = dataInteraction.VerifyRecipeNameExists(recipeNameTextBox.Text, databaseName) || string.IsNullOrEmpty(recipeNameTextBox.Text);
             if(recipeIsNotValid )
             {
-                MessageBox.Show("Recipe name field cannot be empty.", "Input Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Recipe name field cannot be empty or already exist.", "Input Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
                 recipe.RecipeName = recipeNameTextBox.Text;
            
                 dataInteraction.AddInformationToDatabase(recipe, ingredients.ToList(), databaseName);
+                this.Close();
+
             }
 
-            this.Close();
            
         }
     }

@@ -31,11 +31,12 @@ namespace RecipeOrganizer
 
         public MainWindow()
         {
-            /* The MainWindow utilizes the DataAccess class. The DataAccess class contains methods which utilize third-party software packages Dapper, System.Data.SqlClient, and System.Config.ConfigurationManager
+            /* The MainWindow utilizes the DataAccess class. The DataAccess class contains methods which utilize third-party software packages Dapper, Microsoft.Data.SqlClient, and System.Config.ConfigurationManager
          Please see the Credits.txt file for the copyright information, licensing agreements, and links in compliance with these packages' licensing agreements. */
             
             InitializeComponent();
             recipeNames = dataAccess.GetAllRecipeNames(DatabaseName);
+            recipeListItems.DataContext = recipeNames;
             recipeListItems.ItemsSource = recipeNames;
             recipeIngredients.DataContext = ingredients;
             recipeIngredients.ItemsSource = ingredients;
@@ -47,6 +48,10 @@ namespace RecipeOrganizer
             RecipeCreationWindow recipeCreationWindow = new RecipeCreationWindow();
             recipeCreationWindow.databaseName = DatabaseName;
             recipeCreationWindow.ShowDialog();
+            recipeNames = dataAccess.GetAllRecipeNames(DatabaseName);
+            recipeListItems.DataContext = recipeNames;
+            recipeListItems.ItemsSource = recipeNames;
+            this.Show();
         }
 
         private void displayIngredientsButton_Click(object sender, RoutedEventArgs e)
@@ -54,5 +59,7 @@ namespace RecipeOrganizer
             string recipeName = recipeListItems.SelectedItem.ToString();
             recipeIngredients.ItemsSource = dataAccess.GetIngredientListByRecipeName(recipeName, DatabaseName);
         }
+
+      
     }
 }

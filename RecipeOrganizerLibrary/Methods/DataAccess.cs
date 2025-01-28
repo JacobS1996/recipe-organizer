@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Dapper;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Data;
 using RecipeOrganizerLibrary.Models;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace RecipeOrganizerLibrary.Methods
 {
     public class DataAccess
     {
-        /* the DataAccess class contains methods which utilize third-party software packages Dapper, System.Data.SqlClient, and System.Config.ConfigurationManager
+        /* the DataAccess class contains methods which utilize third-party software packages Dapper, Microsoft.Data.SqlClient, and System.Config.ConfigurationManager
          Please see the Credits.txt file for the copyright information, licensing agreements, and links in compliance with these packages' licensing agreements. */
 
         public int GetIngredientIdByTitle(string title, string databaseName)

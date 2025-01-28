@@ -28,13 +28,13 @@ Link to the Dapper repository on Github: https://github.com/DapperLib/Dapper
 
 ---
 
-System.Data.SqlClient (4.9.0) Copyright (c) .Net Foundation and Contributors. All Rights Reserved
+Microsoft.Data.SqlClient (6.0.1) Copyright (c) .Net Foundation. All Rights Reserved
 
-Licensed under the MIT License which can be found at https://github.com/dotnet/maintenance-packages/blob/main/LICENSE
+Licensed under the MIT License which can be found at https://github.com/dotnet/SqlClient/blob/main/LICENSE
 
-Link to NuGet Package: https://www.nuget.org/packages/System.Data.SqlClient/4.9.0
+Link to NuGet Package: https://www.nuget.org/packages/Microsoft.Data.SqlClient/6.0.1
 
-Link to SqlClient repository on GitHub: https://github.com/dotnet/maintenance-packages
+Link to SqlClient repository on GitHub: https://github.com/dotnet/SqlClient
 
 ---
 

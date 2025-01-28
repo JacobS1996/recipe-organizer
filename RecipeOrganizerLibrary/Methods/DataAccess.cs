@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Dapper;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Data;
 using RecipeOrganizerLibrary.Models;
 using System.Linq;
@@ -12,22 +12,22 @@ namespace RecipeOrganizerLibrary.Methods
 {
     public class DataAccess
     {
-        /* the DataAccess class contains methods which utilize third-party software packages Dapper, System.Data.SqlClient, and System.Config.ConfigurationManager
+        /* the DataAccess class contains methods which utilize third-party software packages Dapper, Microsoft.Data.SqlClient, and System.Config.ConfigurationManager
          Please see the Credits.txt file for the copyright information, licensing agreements, and links in compliance with these packages' licensing agreements. */
 
-        public string GetIngredientIdByTitle(string title, string databaseName)
+        public int GetIngredientIdByTitle(string title, string databaseName)
         {
             using (IDbConnection connection = new SqlConnection(DatabaseConnectionHelper.ConnectionStringGetter(databaseName)))
             {
-                List<string> ids = connection.Query<string>("dbo.spGetIngredientIdByTitle @ingredientName", new { ingredientName = title }).ToList();
+                List<int> ids = connection.Query<int>("dbo.spGetIngredientIdByTitle @ingredientName", new { ingredientName = title }).ToList();
                 return ids[ids.Count - 1];
             }
         }
-        public string GetRecipeIdByTitle(string title, string databaseName)
+        public int GetRecipeIdByTitle(string title, string databaseName)
         {
             using (IDbConnection connection = new SqlConnection(DatabaseConnectionHelper.ConnectionStringGetter(databaseName)))
             {
-                List<string> ids = connection.Query<string>("dbo.spGetRecipeIdByTitle @recipeName", new { recipeName = title }).ToList();
+                List<int> ids = connection.Query<int>("dbo.spGetRecipeIdByTitle @recipeName", new { recipeName = title }).ToList();
                 return ids[ids.Count - 1];
             }
         }
@@ -35,7 +35,8 @@ namespace RecipeOrganizerLibrary.Methods
         {
             using (IDbConnection connection = new SqlConnection(DatabaseConnectionHelper.ConnectionStringGetter(databaseName)))
             {
-                return connection.Query<string>("dbo.spGetAllIngredients" ).ToList();
+                List<string> ingredients = connection.Query<string>("dbo.spGetAllIngredients" ).ToList();
+                return ingredients;
             }
         }
 
@@ -43,7 +44,8 @@ namespace RecipeOrganizerLibrary.Methods
         {
             using (IDbConnection connection = new SqlConnection(DatabaseConnectionHelper.ConnectionStringGetter(databaseName)))
             {
-                return connection.Query<string>("dbo.spGetAllRecipeNames").ToList();
+                List<string> output = connection.Query<string>("dbo.spGetAllRecipeNames").ToList();
+                return output;
             }
         }
 
@@ -71,7 +73,7 @@ namespace RecipeOrganizerLibrary.Methods
             }
         }
 
-        public void InsertRecipeIngredientId(string idForIngredient, string idForRecipe, string proportionForIngredient, string databaseName)
+        public void InsertRecipeIngredientId(int idForIngredient, int idForRecipe, string proportionForIngredient, string databaseName)
         {
             using (IDbConnection connection = new SqlConnection(DatabaseConnectionHelper.ConnectionStringGetter(databaseName)))
             {

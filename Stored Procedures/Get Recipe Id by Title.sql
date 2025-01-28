@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE dbo.GetRecipeIdByTitle
+﻿CREATE PROCEDURE dbo.spGetRecipeIdByTitle
 
 @recipeName NVARCHAR(50)
 

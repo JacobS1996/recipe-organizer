@@ -16,9 +16,15 @@ Ensure that you have Visual Studio installed and that it is connected to your Gi
 
 The project should open all relevant files automatically, but if it does not, all the relevant files should be opened automatically by double-clicking on the solution file(.sln). 
 
-<h2>Setting Up the Database</h2>
+<h2>Creating the Database</h2>
 
-Once you have opened the project in Visual Studio, the database can be created by right-clicking on the "RecipeOrganizerDatabase" project file and selecting properties. Ensure that the target platform is set to "Visual Studio 2019" as "Visual Studio 2022" will result in a bug. Right click on the same project file and select publish. From there, you can publish the database to your relational database management system of choice. 
+This repo contains a database project named "RecipeOrganizerDatabase." It can be used to quickly create the database needed to build the program. You can publish the database to your sql database management system of choice by right clicking on the "RecipeOrganizerDatabase" project and selecting publish. To the right of the "target database connection" option, select "edit." There will be a tab named "browse" which will allow you to publish the database to your database management system of choice. If you only wish to test the database, a quick and convenient option is to use the MSSQLocalDB built into Visual Studio. In the "browse" tab mentioned previously, select local>MSSQLocalDB and fill out the information as desired. Finally, name your database and click "publish." One important issue to note is that there is a bug that prevents publishing the database when the target platform is set to "SQL Server 2022 or Azure SQL Database Managed Instance." To fix this issue, right click on the "MockQuizDatabase" project and select properties. Under properties, change the target platform to "SQL Server 2019." The database should not publish without issues.
+
+If the database was published to MSSQLocalDB, it can be accessed using the SQL Server Object Explorer built into Visual Studio. Select View>SQL Server Object Explorer. In the object explorer, select Server>(localdb)MSSQLocalDB>Databases, and the database should be there.
+
+<h2>Connecting the Database to the Application</h2>
+
+
 
 <h2>Wiring Up Dependancies</h2>
 

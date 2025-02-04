@@ -12,7 +12,13 @@ By clicking the "create recipe" button on the top of the home screen, a user is 
 
 <h2>Getting Started</h2>
 
+Ensure that you have Visual Studio installed and that it is connected to your GitHub profile. If you wish to contribute to this repository, create a fork, make changes on the development branch (or a newly created branch), and create a pull request to merge those changes with the development branch on this repo. If you only wish to build the application without making changes to this repository, select "open with Visual Studio" from the "Code" drop down menu. 
+
+The project should open all relevant files automatically, but if it does not, all the relevant files should be opened automatically by double-clicking on the solution file(.sln). 
+
 <h2>Setting Up the Database</h2>
+
+Once you have opened the project in Visual Studio, the database can be created by right-clicking on the "RecipeOrganizerDatabase" project file and selecting properties. Ensure that the target platform is set to "Visual Studio 2019" as "Visual Studio 2022" will result in a bug. Right click on the same project file and select publish. From there, you can publish the database to your relational database management system of choice. 
 
 <h2>Wiring Up Dependancies</h2>
 

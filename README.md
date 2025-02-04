@@ -24,9 +24,20 @@ If the database was published to MSSQLocalDB, it can be accessed using the SQL S
 
 <h2>Connecting the Database to the Application</h2>
 
+To connect the database to the application, use the App.config file. Insert your database name as well as your unique connection string. If you are simply building the application to view it and used the MSSQLocalDB built into Visual Studio, then you can access the database connection string by right clicking the database, selecting properties, and copying the connection string property text. If using this connection string, be sure to remove the spaces between the "Trust Server Certificate", "Application Intent", and "Multi Subnet Failover" field names. 
+
+Under the "RecipeOrganizer" project file, right click on the MainWindow file and select "view code" to access the code-behind. There, change the content of the databaseName variable to match your database name from the app.config file.
 
 
 <h2>Wiring Up Dependancies</h2>
+
+The dependancies should automatically be installed upon opening this project. If they do not, however, they can be found by right clicking on the dependancies for "RecipeOrganizerLibrary." From there, select "manage NuGet Packages." Install the packages listed in the credits section of thie READMe.md file. 
+
+Right click on the "RecipeOrganizer" dependencies and select "add a project reference." Select the "RecipeOrganizerRecipe" to add as a reference. 
+
+<h2>Conclusion</h2>
+
+After following these steps, the application should build without any issues. If you encounter problems, however, please reach out to me via my contact information on GitHub, and I will seek to resolve these issues. 
 
 # Contribution
 
